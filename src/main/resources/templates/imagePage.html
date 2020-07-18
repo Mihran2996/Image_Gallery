@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Welcome
+<a href="/">Back</a>
+<div th:each="image:${images}" class="div_img">
+    <img th:src="@{/image(name=${image.picUrl})}" width="300"
+         th:if="${image.picUrl != null && image.picUrl.length() != 0}"/>
+    <p th:text="${image.name}"></p>
+</div>
+</body>
+</html>
